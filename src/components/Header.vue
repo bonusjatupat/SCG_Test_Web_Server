@@ -27,5 +27,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Hesder",
+  data() {
+    return {
+      logo: require("@/assets/elements/logo.png")
+    }
+  },
+};
 </script>

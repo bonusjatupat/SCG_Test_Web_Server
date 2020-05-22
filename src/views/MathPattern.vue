@@ -38,16 +38,13 @@ export default {
   },
   methods: {
     getAnswer() {
-      axios
-        .get("http://localhost:3030/doscg/find/pattern")
-        .then(res => (this.answer = res.data))
-        .catch(error => this.errored = error)
+      axios.get("http://localhost:3030/doscg/find/pattern")
+           .then(res => (this.answer = res.data))
+           .catch(error => this.errored = error)
       this.isHide = false
-      return this.answer;
     },
     hideAnswer() {
       this.isHide = true
-      return this.isHide
     }
   }
 };

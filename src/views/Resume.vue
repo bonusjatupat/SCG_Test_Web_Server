@@ -52,8 +52,8 @@ export default {
   name: "Resume",
   data() {
     return {
-      profile: require("@/assets/profile.png"),
-      resume: require("@/assets/resume.png"),
+      profile: require("@/assets/elements/profile.png"),
+      resume: require("@/assets/elements/resume.png"),
       dialog: false
     };
   }
