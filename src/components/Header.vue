@@ -1,9 +1,11 @@
 <template>
   <v-app-bar app>
     <v-toolbar-title class="headline text-uppercase pa-6 ma-6 pr-12 mr-12">
-      <span>
-        <img src="../assets/icons/logo.png" width="45px" height="45px" />
-      </span>
+      <router-link to="/resume">
+        <span>
+          <img src="../assets/elements/logo.png" width="45px" height="45px" />
+        </span>
+      </router-link>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
@@ -32,7 +34,7 @@ export default {
   data() {
     return {
       logo: require("@/assets/elements/logo.png")
-    }
-  },
+    };
+  }
 };
 </script>
