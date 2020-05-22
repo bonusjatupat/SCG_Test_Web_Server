@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "Hesder",
+  name: "Header",
   data() {
     return {
       logo: require("@/assets/elements/logo.png")
