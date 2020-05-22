@@ -4,18 +4,25 @@
       Find the best way to go to Central World from SCG Bangsue
     </h2>
     <iframe class="map" :src="getEmbed()"> </iframe>
-    <v-app>
+    <v-app class="app_layout">
       <div class="text-center">
         <v-dialog v-model="dialog" width="800">
           <template v-slot:activator="{ on }">
-            <v-btn class="ma-2" color="#AC9D89" dark v-on="on" @click="getAnswer">VIEW JSON RESULT</v-btn>
+            <v-btn
+              class="ma-2"
+              color="#AC9D89"
+              dark
+              v-on="on"
+              @click="getAnswer"
+              >VIEW JSON RESULT</v-btn
+            >
           </template>
 
           <v-card>
             <v-card-title primary-title>
               JSON RESULT
             </v-card-title>
-            <div>{{answer}}</div>
+            <div>{{ answer }}</div>
             <v-divider></v-divider>
             <v-card-actions>
               <v-spacer></v-spacer>
@@ -66,5 +73,9 @@ export default {
   margin-top: 15px;
   width: 70%;
   height: 400px;
+}
+
+.app_layout {
+  max-height: 50%;
 }
 </style>

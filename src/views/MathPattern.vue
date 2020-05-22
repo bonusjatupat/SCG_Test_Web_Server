@@ -7,7 +7,7 @@
       <v-col cols="9">
         <v-card class="answer_card" max-width="1000" height="300" outlined>
           <div class="overline mb-4 answer_text">ANSWER</div>
-          <div v-if="!isHide">{{ answer }}</div>
+          <h3 v-if="!isHide && (answer.X != null)" class="answer">X = {{answer.X}}, Y = {{answer.Y}}, Z = {{answer.Z}} </h3>
         </v-card>
       </v-col>
       <v-col cols="1">
@@ -31,7 +31,11 @@ export default {
   name: "MathPattern",
   data() {
     return {
-      answer: null,
+      answer: {
+        X: null,
+        Y: null,
+        Z: null
+      },
       errored: null,
       isHide: false
     };
@@ -39,7 +43,11 @@ export default {
   methods: {
     getAnswer() {
       axios.get("http://localhost:3030/doscg/find/pattern")
-           .then(res => (this.answer = res.data))
+           .then(res => {
+                          this.answer.X = res.data.X
+                          this.answer.Y = res.data.Y
+                          this.answer.Z = res.data.Z
+                        })
            .catch(error => this.errored = error)
       this.isHide = false
     },
@@ -70,8 +78,9 @@ export default {
 }
 
 .answer {
-  color: black;
+  color: #ac9d89;
   text-align: center;
+  margin-top: 60px;
 }
 
 .button_container {
